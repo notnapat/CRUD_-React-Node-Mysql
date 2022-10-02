@@ -1,0 +1,53 @@
+	สร้างโปรเจค react
+ท่าง่าย
+- สร้างโฟร์เดอร์ที่จะทำ โปรเจค ไว้ที่ต้องการ
+- เปิด vs code ใช้ cmd of vs code 
+- ใช้คำ สั่ง ใน cmd of vscode >> npx create-react-app ชื่อไฟล์ที่ต้องใช้ react เช่น client
+- สร้าง server folder มาคู่กับ client folder
+- สร้าง index.js ในไฟล์ server
+- เปิด cmd ขึ้นมา 2 ตัว ตัวที่1 cd client , ตัวที่2 cd server
+- รันตัวที่1 >> npm start == รัน react  
+- เปิดไฟล์ client >> public >>= index.html
+- ติดตั้ง bootstrap บน index.html
+- เปิดไฟล์ client >> src >>= App.js 
+- ลบข้อมูลในไฟล์ App.js
+  - ลบ 
+     import logo from './logo.svg';
+	import './App.css';
+  - ลบขอมูลที่อยู่ใน 
+     <div className="App">
+        ลบที่แค่ที่อยู่ข้างใน ลบหมด 
+     </div>
+  - สร้าง from กรอกข้อมูล หรือ คอร์นเทน ลงใน div (เข้าไปดูตัวอย่างในไฟล์ client >> src >> App-comment.js)
+
+-สลับ cmd มาอันที่ cd server
+  - พิมพ์ npm init >> เอ็นเทอร์เรื่อยๆ จนถึง (yes) ก็พิมพ์ yes == ติดตั้ง package.json ลงในโฟลเดอร์ server เพื่อเรียกใช้ dependencies {  mysql cors express }
+  - พิมพ์ npm i mysql cors express >>เอ็นเทอร์ 
+  - เรียกใช้ dependencies ในไฟล์ server >> index.js  (เข้าไปดูตัวอย่างในไฟล์)
+
+- โหลดติดตั้ง xampp == จำ ลองserver mysql
+  - เข้า xampp controt panel >> กด start apache กับ mysql >> เปิดบราวเชอร์ เข้าเว็บ localhost กดเข้าไปที่ phpmyadmin , หรือเข้าไปที่ localhost/phpmyadmin
+  - กด New เพื่อสร้าง database 
+    - ช่องแรกใส่ชื่อ ช่องสองเลือก utf8_general_Ci เสร็จแล้วกด create
+    - แล้วไปที่แทบ SQL เพื่อพิมพ์คำสั่งสร้าง data ข้างล่างคือตัวอย่าง
+      - สร้าง colum
+        CREATE TABLE employees(
+          id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+          name varchar(100) NOT NULL,
+          age int(10) 	NOT NULL,
+          country varchar(100) NOT NULL,
+          position varchar(100) NOT NULL,
+          wage int(10) NOT NULL
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;  >> เสร็จแล้งกด go
+      - แล้วเข้าไปที่ อยู่ตรง left nav  >> employeeSystem >> employess == เพื่อสร้างข้อมูลลง column ที่พึ่งสร้างเมื่อกี้
+        
+
+- ******* ค้างไว้ ถึงตรงนี้ >>สร้างฐานข้อมูลก่อนค่อยเชื่อมต่อ  แต่เขียนเชื่อมต่อไปก่อนแล้ว
+ท่ายาก ใช้คำสั่ง linux สร้างโฟล์เดอร์ และเปิด vscode
+- เปิด cmd of windows >> คีลัดใช้เปิด windows + R
+- cd ชื่อไฟล์ >> ไปยังทีต้องการสร้างโปรเจค
+- mkdir ชื่อไฟล์ที่โปรเจค == สร้างโฟล์เดอร์ หรือ โปรเจค
+- code หรือ code . == เปิด vscode
+- ใช้ cmd of vscode พิมพ์คำสั่งแทน 
+- npx create-react-app ชื่อไฟล์ที่ต้องใช้ react เช่น client
+- ทำ ตามท่าง่ายต่อ
