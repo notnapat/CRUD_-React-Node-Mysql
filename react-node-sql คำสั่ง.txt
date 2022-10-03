@@ -39,10 +39,34 @@
           position varchar(100) NOT NULL,
           wage int(10) NOT NULL
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;  >> เสร็จแล้งกด go
-      - แล้วเข้าไปที่ อยู่ตรง left nav  >> employeeSystem >> employess == เพื่อสร้างข้อมูลลง column ที่พึ่งสร้างเมื่อกี้
+      - แล้วเข้าไปที่ อยู่ตรง left nav  >> employeeSystem >> employess >> insert อยู่ top nav == เพื่อสร้างข้อมูลลง column ที่พึ่งสร้างเมื่อกี้
+        - ใส่ข้อมูลลงตามคอลัมน์ที่สร้างไว้ เช่น ชื่่อ อายุ ประเทศ ตำแหน่ง เงินเดือน
         
+- ไปที่ไฟล์ server >> index.js 
+  - เพิ่ม code เชื่อมต่อ mysqlDBที่สร้างเมื่อกี้ 
+    const db = mysql.sreateConnection({
+      host : "localhost",
+      user : "root",
+      password : "",
+      database : "employeeSystem"
+     })
 
-- ******* ค้างไว้ ถึงตรงนี้ >>สร้างฐานข้อมูลก่อนค่อยเชื่อมต่อ  แต่เขียนเชื่อมต่อไปก่อนแล้ว
+- พิมพ์ใน cmd in server >> npm i nodemon == ติดตั้ง nodemon เพื่อ เวลา code เปลี่ยน server จะไม่ได้ restart ทุกรอบ
+  - ไปที่ server >> package.json 
+    - เพิ่ม คำสั่งข้างล่างเเข้าไปใน "scripts"
+      "scripts":{
+        "dev":nodemon index"  // dev == คำ สั้งรัน , index == ชื่อไฟล์ที่ต้องการให้ nodemon ทำงาน มั้งนะ
+      }
+  - พิมพ์คำ สั่งใน cmd >> npm run dev == เรียกใช้ nodemon
+  
+- ไปที่ไฟล์ server >> index.js เพิ่มคำสั่งดึงข้อมูลจาก mysqlDB มาแสดงหน้าเว็บ localhost:3001/employees (ตัวอย่างในไฟล์ index-comment.js)
+
+- ไปที่ไฟล์ client >> src >> App.js
+	- เพิ่มแถบ cmd มาอีก 1  >> cd client >> npm i axios == ติดตั้ง axios ใช้ให้ font-end ดึงข้อมูล
+	- ใช้ Axios ดึงข้อมูล และ ใช้ useState เก็บข้อมูล และอัพเดท (ตัวอย่างในไฟล์ App-comment.js A1-A7 )
+	********************************************
+
+
 ท่ายาก ใช้คำสั่ง linux สร้างโฟล์เดอร์ และเปิด vscode
 - เปิด cmd of windows >> คีลัดใช้เปิด windows + R
 - cd ชื่อไฟล์ >> ไปยังทีต้องการสร้างโปรเจค
