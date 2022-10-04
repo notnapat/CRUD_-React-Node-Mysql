@@ -3,6 +3,12 @@ import { useState } from 'react'
 
 function App() {
 
+      const [name, setName] = useState("")
+      const [age, setAge] = useState(0)
+      const [country, setCountry] = useState("")
+      const [position, setPosition] = useState("")
+      const [wage, setWage] = useState(0)
+
       const [employeeList, setEmployeeList] = useState([])
 
       const getEmployees = () => {
@@ -11,32 +17,68 @@ function App() {
             })
       }
 
+      const addEmployee = () => {
+            Axios.post('http://localhost:3001/create', {
+                  name: name,
+                  age: age,
+                  country: country,
+                  position: position,
+                  wage: wage
+            }).then(() => {
+                  setEmployeeList([
+                        ...employeeList,  
+                        {
+                              name: name,
+                              age: age,
+                              country: country,
+                              position: position,
+                              wage: wage
+                        }
+                  ])
+            })
+      }
+
       return (
             <div className="App container" >
                   <h1>Employee Information</h1>
                   <div className="information">
                         <form action="">
-                              <div className="mb-5">
+                        <div className="mb-5">
                                     <label htmlFor="name" className="form-label">Name:</label>
-                                    <input type="text" className="form-control" placeholder="Enter name"></input>
+                                    <input type="text" className="form-control" placeholder="Enter name"
+                                                onChange={(event) => {setName(event.target.value)
+                                                }}
+                                    />
                               </div>
                               <div className="mb-5">
                                     <label htmlFor="age" className="form-label">Age:</label>
-                                    <input type="number" className="form-control" placeholder="Enter age"></input>
+                                    <input type="number" className="form-control" placeholder="Enter age"
+                                                onChange={(event) => {setAge(event.target.value)
+                                                }} 
+                                    />
                               </div>
                               <div className="mb-5">
                                     <label htmlFor="country" className="form-label">Country:</label>
-                                    <input type="text" className="form-control" placeholder="Enter country"></input>
+                                    <input type="text" className="form-control" placeholder="Enter country"
+                                                onChange={(event) => {setCountry(event.target.value)
+                                                }} 
+                                   />
                               </div>
                               <div className="mb-5">
-                                    <label htmlFor="proiton" className="form-label">Proition:</label>
-                                    <input type="text" className="form-control" placeholder="Enter protion"></input>
+                                    <label htmlFor="position" className="form-label">Position:</label>
+                                    <input type="text" className="form-control" placeholder="Enter protion"
+                                                onChange={(event) => {setPosition(event.target.value)
+                                                 }} 
+                                    ></input>
                               </div>
                               <div className="mb-5">
                                     <label htmlFor="wage" className="form-label">Wage:</label>
-                                    <input type="number" className="form-control" placeholder="Enter wage"></input>
+                                    <input type="number" className="form-control" placeholder="Enter wage"
+                                                onChange={(event) => {setWage(event.target.value)
+                                                }} 
+                                   ></input>
                               </div>
-                              <button className="btn btn-success">Add Enployee</button>
+                              <button className="btn btn-success" onClick={addEmployee}>Add Enployee</button>
                         </form>
                   </div>
                   <hr />

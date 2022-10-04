@@ -64,8 +64,16 @@
 - ไปที่ไฟล์ client >> src >> App.js
 	- เพิ่มแถบ cmd มาอีก 1  >> cd client >> npm i axios == ติดตั้ง axios ใช้ให้ font-end ดึงข้อมูล
 	- ใช้ Axios ดึงข้อมูล และ ใช้ useState เก็บข้อมูล และอัพเดท (ตัวอย่างในไฟล์ App-comment.js A1-A7 )
-	********************************************
 
+- client >> src >> App.js (ex.App-comment.js) == add data เพิ่มข้อมูลลง mysqlDB
+  - Add1 สร้าง useState เก็บค่า input
+  - Add2 สร้าง event ดัก ข้อมูลจาก value inpust ลงไปไว้ใน ค่า state
+  - Add3 สร้าง ฟังชั่นในการบันทึกข้อมูล
+  - Add4 นำ ตัวแปลฟังชั่นการบันทึกข้อมูล มา สร้าง onclick ที่ปุ่ม addEmployee
+  
+- server >> index.js (ex.index-comment.js) == เพิ่มข้อมูลลง mysqlDB
+  - Add5 ไปดึงค่า useState
+    - Add5.1 แล้วเพิ่มข้อมูลลง mysqlDB
 
 ท่ายาก ใช้คำสั่ง linux สร้างโฟล์เดอร์ และเปิด vscode
 - เปิด cmd of windows >> คีลัดใช้เปิด windows + R

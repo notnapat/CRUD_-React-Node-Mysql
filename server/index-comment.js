@@ -29,6 +29,28 @@ app.get('/employees', (req, res) => {
       })
 })
 
+// Add5 Express(app.post) ไปดึงค่า useState จากพาท ("/create") (ค่าอยู่ใน body.ตัวแปลค่าstate) 
+// Add5.1 แล้วเพิ่มข้อมูลลง mysqlDB
+app.post("/create", (req, res) => {
+      const name = req.body.name
+      const age = req.body.age
+      const country = req.body.country
+      const position = req.body.position
+      const wage = req.body.wage
+
+      db.query(
+            "INSERT INTO employees (name, age, country, position, wage) VALUES(?,?,?,?,?)",
+            [name, age, country, position, wage],
+            (err, result) => {
+                  if (err) {
+                        console.log(err)
+                  } else {
+                        res.send("Values inserted")
+                  }
+            }
+      )
+})
+
 app.listen('3001',() => {
       console.log('Server is running on port 3001');
 })
