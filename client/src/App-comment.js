@@ -11,6 +11,8 @@ function App() {
       const [country, setCountry] = useState("")
       const [position, setPosition] = useState("")
       const [wage, setWage] = useState(0)
+      //Up2
+      const [newWage, setNewWage] = useState(0)
 
       //  A3.สร้าง useState
       // A4. สร้างตัวแปล useState 
@@ -47,6 +49,24 @@ function App() {
             })
       }
 
+      // Up3
+      const updateEmployeeWage = (id) => {
+            Axios.put("http://localhost:3001/update", { wage: newWage, id: id }).then((response) => {
+                  setEmployeeList(
+                        employeeList.map((val) => {
+                              return val.id == id ? {
+                                    id: val.id,
+                                    name: val.name,
+                                    country: val.country,
+                                    age: val.age,
+                                    position: val.position,
+                                    wage: newWage
+                              } : val
+                        }
+                        ))
+            })
+      }
+
       return (
             //  React Form
             <div className="App container" >
@@ -74,6 +94,7 @@ function App() {
                               <div className="mb-5">
                                     <label htmlFor="country" className="form-label">Country:</label>
                                     <input type="text" className="form-control" placeholder="Enter country"
+                                          // Add2
                                           onChange={(event) => {
                                                 setCountry(event.target.value)
                                           }}
@@ -82,6 +103,7 @@ function App() {
                               <div className="mb-5">
                                     <label htmlFor="position" className="form-label">Position:</label>
                                     <input type="text" className="form-control" placeholder="Enter protion"
+                                          // Add2
                                           onChange={(event) => {
                                                 setPosition(event.target.value)
                                           }}
@@ -91,10 +113,12 @@ function App() {
                               <div className="mb-5">
                                     <label htmlFor="wage" className="form-label">Wage:</label>
                                     <input type="number" className="form-control" placeholder="Enter wage"
+                                          // Add2
                                           onChange={(event) => {
                                                 setWage(event.target.value)
                                           }}
                                     />
+
                               </div>
                               {/* Add4   ตัวแปลฟังชั่นการบันทึกข้อมูล มา สร้าง onclick  */}
                               <button className="btn btn-success" onClick={addEmployee}>Add Enployee</button>
@@ -118,6 +142,16 @@ function App() {
                                           <p className="card-taxt">Country: {val.country}</p>
                                           <p className="card-taxt">Position: {val.position}</p>
                                           <p className="card-taxt">Wage: {val.wage}</p>
+                                          {/* Up1 สร้างปุ่ม input for update */}
+                                          <div className='d-flex'>
+                                                <input type="number" placeholder="15000..." style={{ width: "300px" }} className='form-control'
+                                                      // Up4
+                                                      onChange={(event) => {
+                                                            setNewWage(event.target.value)
+                                                      }} />
+                                                {/* Up5 */}
+                                                <button className="btn btn-warning" onClick={() => { updateEmployeeWage(val.id) }}>Update</button>
+                                          </div>
                                     </div>
                               </div>
                         )

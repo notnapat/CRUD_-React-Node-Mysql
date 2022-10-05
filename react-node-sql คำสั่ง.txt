@@ -70,10 +70,18 @@
   - Add2 สร้าง event ดัก ข้อมูลจาก value inpust ลงไปไว้ใน ค่า state
   - Add3 สร้าง ฟังชั่นในการบันทึกข้อมูล
   - Add4 นำ ตัวแปลฟังชั่นการบันทึกข้อมูล มา สร้าง onclick ที่ปุ่ม addEmployee
-  
 - server >> index.js (ex.index-comment.js) == เพิ่มข้อมูลลง mysqlDB
   - Add5 ไปดึงค่า useState
     - Add5.1 แล้วเพิ่มข้อมูลลง mysqlDB
+
+- client >> src >> App.js (ex.App-comment.js) == Update 
+  - Up1 สร้าง ปุ่ม input เพื่อ update
+  - Up2
+  - Up3 สร้างฟังชั่น อัพเดทเพื่อนำไปใส่ปุ่่มกด กดเพื่อใช้งานฟังชั่น
+  - Up4
+  - Up5
+- server >> index.js (ex.index-comment.js) == อับเดทข้อมูล ลงDB
+  - Up6
 
 ท่ายาก ใช้คำสั่ง linux สร้างโฟล์เดอร์ และเปิด vscode
 - เปิด cmd of windows >> คีลัดใช้เปิด windows + R

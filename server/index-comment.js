@@ -51,6 +51,19 @@ app.post("/create", (req, res) => {
       )
 })
 
+// Up6
+app.put('/update', (req, res) => {
+      const id = req.body.id
+      const wage = req.body.wage
+      db.query("UPDATE employees SET wage = ? WHERE id = ?", [wage, id],(err,result) => {
+            if (err) {
+                  console.log(err)
+            } else {
+                  res.send(result)
+            }
+      })
+})
+
 app.listen('3001',() => {
       console.log('Server is running on port 3001');
 })
