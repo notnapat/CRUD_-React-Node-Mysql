@@ -61,9 +61,19 @@
   
 - ไปที่ไฟล์ server >> index.js เพิ่มคำสั่งดึงข้อมูลจาก mysqlDB มาแสดงหน้าเว็บ localhost:3001/employees (ตัวอย่างในไฟล์ index-comment.js)
 
-- ไปที่ไฟล์ client >> src >> App.js
+- client >> src >> App.js (ex.App.comment.js) == ติดตั้งเครื่องมือ
+  - ติดตั้ง axios
+  - import1 เรียกใช้ axios  == ใช้ดึงข้อมูล
 	- เพิ่มแถบ cmd มาอีก 1  >> cd client >> npm i axios == ติดตั้ง axios ใช้ให้ font-end ดึงข้อมูล
-	- ใช้ Axios ดึงข้อมูล และ ใช้ useState เก็บข้อมูล และอัพเดท (ตัวอย่างในไฟล์ App-comment.js A1-A7 )
+  - import2 เรียกใช้ useState  == ใช้เก็บ และอัพเดทข้อมูล
+  
+- client >> src >> App.js (ex.App.comment.js) == get date ดึงข้อมูลมาไว้หน้าเว็บ
+  - Get1 ดึงข้อมูลจาก DB มาแสดง หน้าเว็บ ('/employees')
+- client >> src >> App.js (ex.App.comment.js) == ดึงข้อมูลจาก ('/employees') มาแสดง หรือ มาใช้งานหน้าเว็บ
+  - Get2 สร้างตัวแปล useState เก็บข้อมูลจาก  หน้าเว็บ  ('http://localhost:3001/employees') 
+  - Get3 Get3 สร้างฟังชั่น ให้ปุ่มกดโชว์ข้อมูลทำงาน 
+  - Get4 เมื่อกดปุ่มตกลง ข้อมูลจะจาก useState employeeList จะแสดง
+  - Get5 ใช้ข้อมูลจาก useState employeeList มาสร้าง content  ผ่าน พารามิเตอร์
 
 - client >> src >> App.js (ex.App-comment.js) == add data เพิ่มข้อมูลลง mysqlDB
   - Add1 สร้าง useState เก็บค่า input
@@ -74,15 +84,21 @@
   - Add5 ไปดึงค่า useState
     - Add5.1 แล้วเพิ่มข้อมูลลง mysqlDB
 
-- client >> src >> App.js (ex.App-comment.js) == Update 
+- client >> src >> App.js (ex.App-comment.js) == Update ข้อมูลลง DB
   - Up1 สร้าง ปุ่ม input เพื่อ update
-  - Up2
-  - Up3 สร้างฟังชั่น อัพเดทเพื่อนำไปใส่ปุ่่มกด กดเพื่อใช้งานฟังชั่น
-  - Up4
-  - Up5
+  - Up2 สร้าง useState มาเก็บค่า inpust update
+  - Up3 ดักค่า input ที่ต้องการอัพเดท
+  - Up4 สร้างฟังชั่น อัพเดทเพื่อนำไปใส่ปุ่่มกด กดเพื่อใช้งานฟังชั่น
+  - Up5 นำตัวแปลฟังชั่น update มาใส่ไว้ในปุ่มกดเพื่อ update
 - server >> index.js (ex.index-comment.js) == อับเดทข้อมูล ลงDB
-  - Up6
+  - Up 6ดึงข้อมูลจาก DB มาแสดง หน้าเว็บ ('/employees')
 
+- client >> src >> App.js (ex.App-comment.js) ==  สร้างฟังชั่น ลบข้อมูลใน DB  
+  - Delete1 ฟังชั่นใช้กับปุ่มกด delete
+  - Delete2 นำตัวแปลฟังชั่นกด delete มาใส่เพื่อกด ลบข้อมูล
+- server >> index.js (ex.index-comment.js) == ลยข้อมูลในDB  
+  - Delete3 ใช้ id จากหน้าเว็บ ('/delete/:id') ลบข้อมูลใน DB
+  
 ท่ายาก ใช้คำสั่ง linux สร้างโฟล์เดอร์ และเปิด vscode
 - เปิด cmd of windows >> คีลัดใช้เปิด windows + R
 - cd ชื่อไฟล์ >> ไปยังทีต้องการสร้างโปรเจค

@@ -17,14 +17,13 @@ const db = mysql.sreateConnection({
      
 })
 
-//Node ดึงข้อมูลจาก mysqlDB มาแสดงหน้าเว็บ localhost:3001/employees
-  //และให้ cmd แสดงว่ารันอยู่ที่ port ไหน
+// Get1 ดึงข้อมูลจาก DB มาแสดง หน้าเว็บ ('/employees')
 app.get('/employees', (req, res) => {
       db.query("SELECT * FROM employees", (err, result) =>{
             if(err) {
                   console.log(err);
             }else{
-                  res.send(aaaa);
+                  res.send(result);
             }
       })
 })
@@ -51,11 +50,23 @@ app.post("/create", (req, res) => {
       )
 })
 
-// Up6
+// Up6 ใช้ข้อมูล จากหน้าเว็บ ('/update') update ข้อมูลลง DB
 app.put('/update', (req, res) => {
       const id = req.body.id
       const wage = req.body.wage
       db.query("UPDATE employees SET wage = ? WHERE id = ?", [wage, id],(err,result) => {
+            if (err) {
+                  console.log(err)
+            } else {
+                  res.send(result)
+            }
+      })
+})
+
+// Delete3 ใช้ id จากหน้าเว็บ ('/delete/:id') ลบข้อมูลใน DB
+app.delete('/delete/:id', (req,res) => {
+      const id = req.params.id
+      db.query("DELETE FROM employees WHERE id = ?" , id, (err, result) => {
             if (err) {
                   console.log(err)
             } else {

@@ -56,6 +56,16 @@ function App() {
             })
       }
 
+      const deleteEmployee = (id) => {
+            Axios.delete(`http://localhost:3001/delete/${id}`).then((response) =>{
+                  setEmployeeList(
+                        employeeList.filter((val) => {
+                              return val.id != id
+                        })
+                  )
+            })
+      }
+
       return (
             <div className="App container" >
                   <h1>Employee Information</h1>
@@ -126,6 +136,7 @@ function App() {
                                                             setNewWage(event.target.value)
                                                       }} />
                                                 <button className="btn btn-warning" onClick={() => { updateEmployeeWage(val.id) }}>Update</button>
+                                                <button className="btn btn-danger" onClick={() => { deleteEmployee(val.id)}}>Delete</button>
                                           </div>
                                     </div>
                               </div>
