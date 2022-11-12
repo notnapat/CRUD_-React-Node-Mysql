@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //Node ใช้ depen เชื่อมต่อ mysqlDB
-const db = mysql.sreateConnection({
+const db = mysql.createConnection({
       host : "localhost",
       user : "root",
       password : "",

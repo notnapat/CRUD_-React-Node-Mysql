@@ -2,7 +2,7 @@
 ท่าง่าย
 - สร้างโฟร์เดอร์ที่จะทำ โปรเจค ไว้ที่ต้องการ
 - เปิด vs code ใช้ cmd of vs code 
-- ใช้คำ สั่ง ใน cmd of vscode >> npx create-react-app ชื่อไฟล์ที่ต้องใช้ react เช่น client
+- ใช้คำ สั่ง ใน cmd of vscode >> npx create-react-app ชื่อไฟล์ที่จะช้ react เช่น client
 - สร้าง server folder มาคู่กับ client folder
 - สร้าง index.js ในไฟล์ server
 - เปิด cmd ขึ้นมา 2 ตัว ตัวที่1 cd client , ตัวที่2 cd server
@@ -104,7 +104,7 @@
 - cd ชื่อไฟล์ >> ไปยังทีต้องการสร้างโปรเจค
 - mkdir ชื่อไฟล์ที่จะให้เป็นโปรเจค == สร้างโฟล์เดอร์ หรือ โปรเจค
 - cd ชื่อไฟล์โปรเจคที่สร้างเมื่อกี้ 
-- npx create-react-app ชื่อไฟล์ที่ต้องใช้ react เช่น client ถ้าไม่ได้ให้ทำตามด้านล่าง
+- npx create-react-app ชื่อไฟล์ที่จะใช้ react เช่น client ถ้าไม่ได้ให้ทำตามด้านล่าง
 
 ถ้า npx ใน cmd of windows ไม่ได้ให้ทำตามด้านล่าง
 
