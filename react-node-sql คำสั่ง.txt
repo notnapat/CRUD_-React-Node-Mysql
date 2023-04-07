@@ -1,4 +1,5 @@
 	สร้างโปรเจค react
+	
 ท่าง่าย
 - สร้างโฟร์เดอร์ที่จะทำ โปรเจค ไว้ที่ต้องการ
 - เปิด vs code ใช้ cmd of vs code 
@@ -112,3 +113,15 @@
 - ใช้ cmd of vscode พิมพ์คำสั่งแทน 
 - npx create-react-app ชื่อไฟล์ที่ต้องใช้ react เช่น client
 - ทำ ตามท่าง่ายต่อ
+
+### การเข้ารหัส รหัสผ่าน
+cmd >> server => npm install bcrypt
+  ## ติดตั้ง เพิ่ม
+  => npm install express-session body-parser cookie-parser
+
+
+
+
+
+
+
